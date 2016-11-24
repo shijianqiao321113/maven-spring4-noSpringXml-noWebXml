@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.spring4.pure.annotation.dao.mapper.UserInfoMapper">
+	<!-- 模糊查询获取筛选条件 -->
+	<select id="getUserInfoAll" resultType="userInfoEntity">
+		SELECT user_id AS
+		userId,user_no AS userNo,user_login AS userLogin,user_ename AS userName,
+		user_adress AS userAddress FROM sys_user 
+		ORDER BY user_id ASC LIMIT 0,100
+	</select>
+</mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 基础设置 -->
+    <settings>
+        <!-- changes from the defaults -->
+        <setting name="lazyLoadingEnabled" value="false"/>
+    </settings>
+    <!-- 别名定义 -->
+	<typeAliases>
+		<typeAlias alias="userInfoEntity" type="com.spring4.pure.annotation.entity.UserInfoEntity"/>
+    </typeAliases>
+    <!-- SQL映射文件 -->
+	<mappers>
+		<mapper resource="com/spring4/pure/annotation/dao/ibatis/UserInfo.xml"/>
+	</mappers>
+</configuration>
