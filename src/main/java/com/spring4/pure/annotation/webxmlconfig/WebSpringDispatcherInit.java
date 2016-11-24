@@ -19,7 +19,8 @@ public class WebSpringDispatcherInit implements WebApplicationInitializer {
 		ctx.setServletContext(servletContext);
 		Dynamic servlet = servletContext.addServlet("dispatcher",new DispatcherServlet(ctx));
 		servlet.addMapping("*.json");
-//		servlet.addMapping("*.xhtml");
+		servlet.addMapping("*.xhtml");
+		servlet.addMapping("/hessian/*");//hessian 请求
 		servlet.setLoadOnStartup(1);
 	}
 }

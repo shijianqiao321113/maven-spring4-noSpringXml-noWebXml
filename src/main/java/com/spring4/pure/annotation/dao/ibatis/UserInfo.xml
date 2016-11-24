@@ -6,6 +6,6 @@
 		SELECT user_id AS
 		userId,user_no AS userNo,user_login AS userLogin,user_ename AS userName,
 		user_adress AS userAddress FROM sys_user 
-		ORDER BY user_id ASC LIMIT 0,100
+		ORDER BY user_id ASC LIMIT 0,20
 	</select>
 </mapper>

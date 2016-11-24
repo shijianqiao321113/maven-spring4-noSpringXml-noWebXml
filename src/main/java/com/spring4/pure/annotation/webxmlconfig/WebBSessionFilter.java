@@ -9,12 +9,8 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
-import javax.servlet.annotation.WebInitParam;
 
-@WebFilter(filterName="FilterSession",urlPatterns="/*",  
-		initParams={  
-	    @WebInitParam(name="exclusions",value="*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*")// 忽略资源  
-	})
+@WebFilter(filterName="FilterSession",urlPatterns={"*.json,*.xhtml"})
 public class WebBSessionFilter implements Filter{
 
 	@Override

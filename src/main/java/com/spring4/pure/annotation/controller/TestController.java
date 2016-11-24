@@ -43,7 +43,6 @@ public class TestController {
 		for (UserInfoEntity userInfoEntity : arrylist) {
 			messageQueueSender.sendTextMessage(queueName, JSON.toJSONString(userInfoEntity));
 		}
-		
 		return "show";
 	}
 }
