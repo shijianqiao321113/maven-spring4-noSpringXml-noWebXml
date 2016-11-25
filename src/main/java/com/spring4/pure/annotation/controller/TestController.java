@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.alibaba.fastjson.JSON;
+import com.joojee.usercenter.client.JoojeeUserCenterResult;
+import com.joojee.usercerter.oauth.service.ServiceProvider;
 import com.spring4.pure.annotation.activemq.MessageQueueSender;
 import com.spring4.pure.annotation.entity.UserInfoEntity;
 import com.spring4.pure.annotation.redis.RedisOper;
@@ -31,6 +33,9 @@ public class TestController {
 	@Autowired
 	private MessageQueueSender messageQueueSender;
 	
+	@Autowired
+	private ServiceProvider joojeeOauthService;
+	
 	@RequestMapping("/user/login")
 	public String showView(HttpServletRequest request,HttpServletResponse response){
 		List<UserInfoEntity> arrylist = this.userInfoServices.getUserInfoAll();
@@ -43,6 +48,10 @@ public class TestController {
 		for (UserInfoEntity userInfoEntity : arrylist) {
 			messageQueueSender.sendTextMessage(queueName, JSON.toJSONString(userInfoEntity));
 		}
+		
+		JoojeeUserCenterResult result = joojeeOauthService.getSecrectKey("1111111111111222222222222");
+		System.out.println("==========hessian result ======="+result.getCode()+"=========="+result.getDescription());
+		
 		return "show";
 	}
 }

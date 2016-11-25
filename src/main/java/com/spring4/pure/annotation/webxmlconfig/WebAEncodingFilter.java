@@ -13,7 +13,8 @@ import javax.servlet.annotation.WebInitParam;
 
 import org.springframework.util.StringUtils;
 
-@WebFilter(filterName="FilterEnCoding",urlPatterns="/*",initParams={@WebInitParam(name = "encoding", value = "UTF-8")})
+@WebFilter(filterName="FilterEnCoding",urlPatterns="/*",
+		initParams={@WebInitParam(name = "encoding", value = "UTF-8")})
 public class WebAEncodingFilter implements Filter{
 
 	private String encoding;

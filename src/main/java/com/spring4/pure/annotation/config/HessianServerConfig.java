@@ -10,7 +10,7 @@ import com.spring4.pure.annotation.hessian.TestHessianService;
 
 @Configuration
 @RequestMapping("/hessian")
-public class HessianConfig {
+public class HessianServerConfig {
 	
 	@Autowired
 	private TestHessianService testHessianService;
@@ -22,5 +22,4 @@ public class HessianConfig {
 		hessian.setServiceInterface(TestHessianService.class);
 		return hessian;
 	}
-
 }
